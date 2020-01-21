@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Cereal-Book';
+    font-display: swap;
+    src: url('/static/font/Cereal/AirbnbCereal-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cereal-Black';
+    font-display: swap;
+    src: url('/static/font/Cereal/AirbnbCereal-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.black-font {
+    font-family: "Cereal-Black", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+.book-font {
+    font-family: "Cereal-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .title, .tiempos-headline {
+    font-family: "Cereal-Black", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: currentColor;
+    line-height: 100%;
+    margin: .5em 0;
+    outline: none;
+    font-size: 2rem;
+}
+
+
+body,
+p,
+button,
+div,
+span,
+font,
+option,
+select,
+.label,
+.help,
+.input,
+.select,
+.label,
+.button,
+.textarea {
+    font-family: "Cereal-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+    font-size: 16px;
+}
+
+
+.fit-content {
+    max-width: fit-content;
+    margin: auto;
+}
+
+.bk-orange {
+    background-color: #d15029 !important;
+    color: #ffffff;
+}
+
+.bk-blue {
+    background-color: #233e4f !important;
+    color: #ffffff;
+}
+
+.bk-cream {
+    background-color: #f6f1e7;
+    color: #d15029;
+}
+
+body.bk-cream > nav > div.navbar-brand > .navbar-item, body.bk-cream > nav > div.navbar-menu > div.navbar-end > .navbar-item {
+    color: #d15029 !important;
+}
+
+body.bk-cream > nav.bk-orange > div.navbar-brand > .navbar-item, body.bk-cream > nav.bk-orange > div.navbar-menu > div.navbar-end > .navbar-item {
+    color: #ffffff !important;
+}
+
+.bgoverlay {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 600px) {
+    body.w3-margin {
+        margin: 0 !important;
+    }
+
+    body.w3-round-large, footer {
+        border-radius: 0 !important;
+    }
+
+    .grand-title {
+        font-size: 32px !important;
+    }
+
+    .grand-intro {
+        font-size: 16px !important;
+    }
+}

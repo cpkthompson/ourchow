@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block extra_css %}
+    <style>
+        .bk-blue {
+            background-color: #233e4f;
+            color: #ffffff;
+        }
+    </style>
+{% endblock %}
+{% block body_class %}
+    bk-orange
+{% endblock %}
+{% block content %}
+    <div class="w3-padding-64 w3-content container w3-container">
+        <div class="columns is-multiline" style="max-width: 1000px;margin: auto">
+            {% for item in 'abcdefg' %}
+                <div class="column is-6 w3-padding-32 w3-padding-large">
+                    <div class="">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://bulma.io/images/placeholders/640x360.png" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div>
+                            <hr>
+                            <p class="title is-4">Carrot Cake</p>
+                            <p>
+                                {% lorem '1' %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

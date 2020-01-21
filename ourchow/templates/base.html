@@ -6,35 +6,153 @@
     <meta charset="utf-8"/>
     <title>
         {% block title %}
-        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
         {% endblock %}
         {% block title_suffix %}
-        {% with self.get_site.site_name as site_name %}
-        {% if site_name %}- {{ site_name }}{% endif %}
-        {% endwith %}
+            {% with self.get_site.site_name as site_name %}
+                {% if site_name %}- {{ site_name }}{% endif %}
+            {% endwith %}
         {% endblock %}
     </title>
-    <meta content="" name="description"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-
-    {# Global stylesheets #}
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'css/w3.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ourchow.css' %}">
 
     {% block extra_css %}
-    {# Override this in templates to add extra stylesheets #}
     {% endblock %}
 </head>
 
-<body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}{% endblock %} w3-margin w3-round-large">
+
 {% wagtailuserbar %}
+<nav style="background-color: transparent" class="navbar is-transparent w3-padding {% block nav_class %}{% endblock %}">
+    <div class="navbar-brand">
+        <a class="navbar-item w3-text-white black-font w3-large" href="/">
+            OurChow
+        </a>
+        <div class="navbar-burger burger w3-text-white"
+             data-target="navbarExampleTransparentExample">
+        </div>
+        <a class="navbar-item w3-hide-large w3-text-white black-font is-uppercase">
+            <i class="fab fa-instagram w3-xlarge"></i>
+        </a>
+        &nbsp;
+        <a class="navbar-item w3-hide-large w3-text-white black-font is-uppercase">
+            <i class="fab fa-facebook-square w3-xlarge"></i>
+        </a>
+        &nbsp;
+        <a class="navbar-item w3-hide-large w3-text-white black-font is-uppercase">
+            <i class="fab fa-whatsapp w3-xlarge"></i>
+        </a>
+    </div>
 
-{% block content %}{% endblock %}
+    <div class="navbar-menu">
+        <div class="navbar-end w3-hide-medium w3-hide-small w3-center">
+            {% for foo in 'a' %}
+                <a class="navbar-item w3-text-white black-font is-uppercase" href="/">
+                </a>
+            {% endfor %}
 
-{# Global javascript #}
-<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+            <a class="navbar-item w3-text-white black-font is-uppercase" href="/">
+                Home
+            </a>
+            <a class="navbar-item w3-text-white black-font is-uppercase" href="/about">
+                About
+            </a>
+            <a class="navbar-item w3-text-white black-font is-uppercase" href="/pastries">
+                Pastries
+            </a>
+            <a class="navbar-item w3-text-white black-font is-uppercase" href="/meals">
+                Meals
+            </a>
+            <a class="navbar-item w3-text-white black-font is-uppercase" href="/blog">
+                Blog
+            </a>
+            <a class="navbar-item w3-text-white black-font is-uppercase" href="/contact">
+                Contact
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <a class="navbar-item w3-text-white black-font is-uppercase">
+                <i class="fab fa-instagram w3-xlarge"></i>
+            </a>
+            &nbsp;
+            <a class="navbar-item w3-text-white black-font is-uppercase">
+                <i class="fab fa-facebook-square w3-xlarge"></i>
+            </a>
+            &nbsp;
+            <a class="navbar-item w3-text-white black-font is-uppercase">
+                <i class="fab fa-whatsapp w3-xlarge"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="w3-padding bk-orange w3-hide-large">
+
+    <div class="fit-content">
+        <div class="level is-mobile" style="overflow-x: auto;white-space: nowrap">
+            <div class="level-item is-uppercase w3-padding black-font w3-small">About us</div>
+            <div class="level-item is-uppercase w3-padding black-font w3-small">Pastries</div>
+            <div class="level-item is-uppercase w3-padding black-font w3-small">Meals</div>
+            <div class="level-item is-uppercase w3-padding black-font w3-small">Blog</div>
+            <div class="level-item is-uppercase w3-padding black-font w3-small">Location</div>
+        </div>
+    </div>
+</div>
+<div style="min-height: 100vh">
+    {% block content %}{% endblock %}
+</div>
+<footer class="w3-border-top w3-border-white bk-orange w3-padding-64 {% block footer_class %}{% endblock %}"
+        style="border-radius:0 0 8px 8px">
+    <div class="w3-container">
+        <div class="level w3-padding-large is-centered">
+            <h1 class="level-item w3-large">
+                OURCHOW
+            </h1>
+            <div class="level-item black-font w3-padding-large" style="max-width: 100%;text-align: center">
+                BE FIRST TO KNOW ABOUT OUR DAILY SPECIALS AND MORE. FOLLOW OURCHOW ON SOCIAL MEDIA.
+            </div>
+            <div class="level-item w3-padding-large">
+                <i class="fab fa-instagram w3-xlarge"></i>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <i class="fab fa-facebook-square w3-xlarge"></i>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <i class="fab fa-whatsapp w3-xlarge"></i>
+            </div>
+        </div>
+        <br>
+        <div class="fit-content">
+            <div class="level w3-margin-bottom">
+                <a class="level-item is-uppercase w3-padding-small w3-text-white black-font" href="/about">About</a>
+                <a class="level-item is-uppercase w3-padding-small w3-text-white black-font"
+                   href="/pastries">Pastries</a>
+                <a class="level-item is-uppercase w3-padding-small w3-text-white black-font" href="/meals">Meals</a>
+                <a class="level-item is-uppercase w3-padding-small w3-text-white black-font" href="/blog">Blog</a>
+                <a class="level-item is-uppercase w3-padding-small w3-text-white black-font" href="/contact">Contact</a>
+            </div>
+        </div>
+        <br>
+        <div class="w3-center">
+            Privacy Policy
+            &nbsp;
+            &bull;
+            &nbsp;
+            Designed with ❤ in Accra
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="{% static 'js/ourchow.js' %}"></script>
 
 {% block extra_js %}
-{# Override this in templates to add extra javascript #}
 {% endblock %}
 </body>
 </html>

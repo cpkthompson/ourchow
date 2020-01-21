@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body_class %}bk-cream{% endblock %}
+{% block nav_class %}
+    bk-orange
+{% endblock %}
+{% block content %}
+    <div class="w3-center" style="max-width: 500px;margin: auto">
+
+        <div class="hero is-small ">
+            <div class="hero-body">
+                <h1 class="title">
+                    {{ page.introduction }}
+                </h1>
+            </div>
+        </div>
+        <div>
+            {{ page.body|linebreaksbr }}
+        </div>
+    </div>
+
+{% endblock %}
